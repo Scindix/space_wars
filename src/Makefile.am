@@ -6,7 +6,7 @@ spacewars_SOURCES = main.cpp
 spacewars_LDADD = -lnanovg ../spaceships/_AllSpaceships.o
 
 all-local: spacewars$(EXEEXT)
-	cd .. && $(LN_S) src/spacewars$(EXEEXT) ../spacewars$(EXEEXT)
+	cd .. && $(LN_S) src/spacewars$(EXEEXT) spacewars$(EXEEXT)
 
 clean-local:
 	rm -f ../spacewars$(EXEEXT)

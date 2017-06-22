@@ -11,8 +11,22 @@ AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
+#AC_DEFUN(AC_PROG_PREMAKE4, [AC_CHECK_PROG(PREMAKE4,premake4,yes)])
+AC_CHECK_PROG([PREMAKE4],[premake4],[yes],[no])
+#AM_CONDITIONAL([FOUND_PREMAKE4], [test "x$PREMAKE4" = xyes])
+#AM_COND_IF([FOUND_FFMPEG],,[AC_MSG_ERROR([required program 'premake4' not found.])])
+if test x"$PREMAKE4" != x"yes" ; then
+    AC_MSG_ERROR([Please install premake4 before installing.])
+fi
+
 AC_PROG_CXX
 AC_PROG_CC
+AC_PROG_LN_S
+#AC_PROG_PREMAKE4
+
+#if test x"${PREMAKE4}" != x"yes" ; then
+#    AC_MSG_ERROR([Premake4 not found. Please install it before compliling spacewars.])
+#fi
 
 # Checks for libraries.
 

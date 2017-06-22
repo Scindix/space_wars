@@ -1,5 +1,4 @@
-
-all: nanovg/src/nanovg.c
+all:
 	cd nanovg &&\
 	premake4 gmake &&\
 	cd build &&\
